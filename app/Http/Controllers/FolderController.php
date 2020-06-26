@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Folder;
 use App\Http\Requests\CreateFolder;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class FolderController extends Controller
@@ -20,7 +21,7 @@ class FolderController extends Controller
 
         $folder->title = $request->title;
 
-        $folder->save();
+        Auth::user()->folders()->save($folder);
 
         return redirect()->route('tasks.index', [
             'id' => $folder->id,
