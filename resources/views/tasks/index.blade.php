@@ -72,33 +72,6 @@
                     var pyrmont = new google.maps.LatLng(35.654918,139.694922);
                     createMap(pyrmont)
 
-                    document.getElementById('getcurrentlocation').onclick = function() {
-                        geoLocationInit();
-                    }
-
-                    function geoLocationInit() {
-                        if (navigator.geolocation) {
-                            navigator.geolocation.getCurrentPosition(success, fail);
-
-                        } else {
-                            createMap(pyrmont);
-                        }
-                    }
-
-                    function success(position) {
-                        var currentLat = position.coords.latitude;
-                        var currentLng = position.coords.longitude;
-
-                        var pyrmont = new google.maps.LatLng(currentLat,currentLng);
-
-                        createMap(pyrmont)
-
-                        CurrentPositionMarker(pyrmont);
-                    }
-
-                    function fail(pyrmont) {
-                        createMap(pyrmont);
-                    }
 
                     function createMap(pyrmont) {
 
@@ -117,30 +90,17 @@
                         });
 
                         var placename = place.name;
-                        // 吹き出しにカフェの名前を埋め込む
                         var contentString = `<div class="sample"><p id="place_name">${placename}</p></div>`;
 
-                        // 吹き出し
-                        var infoWindow = new google.maps.InfoWindow({ // 吹き出しの追加
-                            content:  contentString// 吹き出しに表示する内容
+                        var infoWindow = new google.maps.InfoWindow({
+                            content:  contentString
                         });
 
 
-                        marker.addListener('click', function() { // マーカーをクリックしたとき
-                            infoWindow.open(map, marker); // 吹き出しの表示
+                        marker.addListener('click', function() {
+                            infoWindow.open(map, marker);
                         });
 
-                    }
-
-
-                    function CurrentPositionMarker(pyrmont) {
-                        var image = 'http://i.stack.imgur.com/orZ4x.png';
-                        var marker = new google.maps.Marker({
-                            position: pyrmont,
-                            map: map,
-                            icon: image
-                        });
-                        marker.setMap(map);
                     }
 
                     function nearbysearch(pyrmont) {
