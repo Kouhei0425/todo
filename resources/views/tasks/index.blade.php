@@ -62,7 +62,7 @@
         <div id="map" style="height: 500px; width: 50%; margin: 2rem auto 0;"></div>
         <button id="getcurrentlocation">現在地周辺のジムを探す</button>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZBtXt-V93liPBKMv382fxIo2ptUtHOtw&libraries=places"
+        <script src="https://maps.googleapis.com/maps/api/js?key==places"
         ></script>
         <script type="text/javascript">
             $(function(){
