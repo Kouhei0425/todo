@@ -59,7 +59,7 @@
             </div>
             <div id="map" style="height: 50vh; width: 80%; margin: 0 auto 5rem;"></div>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <script src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google-map.apikey') }}&libraries=places"
+            <script src="https://maps.googleapis.com/maps/api/js?key={{config('services.google-map.apikey') }}&libraries=places"
             ></script>
             <script type="text/javascript">
 
