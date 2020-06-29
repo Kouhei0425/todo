@@ -66,10 +66,10 @@
                 $(function(){
 
                     'use strict';
-                    var map;
-                    var service;
-                    var infowindow;
-                    var pyrmont = new google.maps.LatLng(35.654918,139.694922);
+                    let map;
+                    let service;
+                    let infowindow;
+                    let pyrmont = new google.maps.LatLng(35.654918,139.694922);
                     createMap(pyrmont)
 
 
@@ -84,15 +84,15 @@
 
                     function createMarker(latlng, icn, place)
                     {
-                        var marker = new google.maps.Marker({
+                        let marker = new google.maps.Marker({
                             position: latlng,
                             map: map
                         });
 
-                        var placename = place.name;
-                        var contentString = `<div class="sample"><p id="place_name">${placename}</p></div>`;
+                        let placename = place.name;
+                        let contentString = `<div class="sample"><p id="place_name">${placename}</p></div>`;
 
-                        var infoWindow = new google.maps.InfoWindow({
+                        let infoWindow = new google.maps.InfoWindow({
                             content:  contentString
                         });
 
@@ -104,7 +104,7 @@
                     }
 
                     function nearbysearch(pyrmont) {
-                        var request = {
+                        let request = {
                             location: pyrmont,
                             radius: '3000',
                             type: ['gym']
@@ -115,10 +115,10 @@
 
                         function callback(results, status) {
                             if (status == google.maps.places.PlacesServiceStatus.OK) {
-                                for (var i = 0; i < results.length; i++) {
-                                    var place = results[i];
-                                    var latlng = place.geometry.location;
-                                    var icn = place.icon;
+                                for (let i = 0; i < results.length; i++) {
+                                    let place = results[i];
+                                    let latlng = place.geometry.location;
+                                    let icn = place.icon;
 
                                     createMarker(latlng, icn, place);
                                 }
